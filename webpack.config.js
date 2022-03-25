@@ -3,7 +3,7 @@
  const {VueLoaderPlugin}=require('vue-loader')
  const {CleanWebpackPlugin}=require('clean-webpack-plugin')
  module.exports={
-     entry:'./src/main.js',
+     entry:'./src/main.ts',
      output:{
         filename:'app.js',
         path:path.resolve(__dirname,'dist')
@@ -27,6 +27,11 @@
              {
                  test:/\.s[ac]ss$/,
                  use:['style-loader','css-loader','sass-loader']
+             },
+             {
+                 test:/\.ts$/,
+                 use:'ts-loader',
+                //  exclude:/node_modules/
              }
          ]
      },
